@@ -426,12 +426,18 @@ public class AppMain {
 	    
 	    
 	    MenuOpcoes op;
-		do {
-			exibirMenuExterno();
-			op = lerOpcaoMenuExterno();
-			executarOpcaoMenuExterno(op);
-		} while(op != MenuOpcoes.SAIR);
-		System.out.println("Saiu do sistema");
-		entrada.close();
+
+	    exibirMenuExterno();
+	    op = lerOpcaoMenuExterno();
+
+	    while (op != MenuOpcoes.SAIR) {
+	        executarOpcaoMenuExterno(op);
+
+	        exibirMenuExterno();
+	        op = lerOpcaoMenuExterno();
+	    }
+
+	    System.out.println("Saiu do sistema");
+	    entry.close();
 	}
 }
